@@ -1,0 +1,180 @@
+:root {
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --secondary: #3f3f46;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text: #18181b;
+  --text-light: #71717a;
+  --border: #e4e4e7;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Formularios */
+form {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+form:hover {
+  transform: translateY(-2px);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+label {
+  color: var(--text-light);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+th {
+  background: var(--background);
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+td {
+  padding: 1rem;
+  color: var(--text-light);
+  border-bottom: 1px solid var(--border);
+}
+
+tr:hover {
+  background-color: rgba(99, 102, 241, 0.05);
+}
+
+/* Botones */
+button {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+/* Añadir margen al formulario */
+form {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  animation: slideDown 0.3s ease-out;
+}
+/* Centrar botones en la tabla */
+td:last-child {
+  text-align: center; /* Centra los botones horizontalmente */
+  display: flex;
+  justify-content: center; /* Centra los botones usando flexbox */
+  gap: 0.5rem; /* Espacio entre botones */
+}
+
+/* Botones del formulario */
+form > div:last-child {
+  display: flex;
+  gap: 1rem; /* Separación entre botones */
+  margin-top: 1.5rem; /* Espacio superior */
+}
+
+/* Animación para el formulario */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #18181b;
+    --surface: #27272a;
+    --text: #fafafa;
+    --text-light: #a1a1aa;
+    --border: #3f3f46;
+  }
+  
+  input, select, textarea {
+    background: var(--background);
+  }
+  
+  tr:hover {
+    background-color: rgba(99, 102, 241, 0.1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .container > button {
+    margin-bottom: 1.5rem;
+  }
+
+  form {
+    margin-bottom: 1.5rem; /* Menor separación en móviles */
+  }
+  
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
